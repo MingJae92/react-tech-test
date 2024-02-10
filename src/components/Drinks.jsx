@@ -1,5 +1,6 @@
+// Drinks.js
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import {
   CircularProgress,
@@ -10,6 +11,7 @@ import {
   CardMedia,
   Paper,
 } from "@mui/material";
+// import DrinkDetail from "./components/DrinkDetail";
 
 function Drinks() {
   const [drinks, setDrinks] = useState([]);
@@ -64,9 +66,7 @@ function Drinks() {
                     <Typography variant="body2" color="text.secondary">
                       {drink.description.slice(0, 100)}...
                     </Typography>
-                    <Typography variant="h6" color="primary">
-                      ${drink.abv.toFixed(2)}
-                    </Typography>
+                    
                   </CardContent>
                 </Link>
               </Card>
@@ -74,6 +74,9 @@ function Drinks() {
           ))}
         </Grid>
       )}
+
+      {/* Route for DrinkDetail component */}
+      {/* <Route path="/drinkdetail/:id" component={DrinkDetail} /> */}
     </Paper>
   );
 }

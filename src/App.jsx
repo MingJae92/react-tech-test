@@ -1,15 +1,26 @@
-import './App.css'
-import Drinks from './components/Drinks'
+import "./App.css";
+import Drinks from "./components/Drinks";
+import Drink_Details from "./components/Drink_Detail";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 function App() {
-  
-
   return (
-   <div>
-    <Drinks/>
-  </div>
-
-   
-  )
+    
+      <Routes>
+        <Route path="/" element={<Drinks />} />
+       
+      </Routes>
+    
+    
+  );
 }
 
-export default App
+export default App;
+
+
+{/* <Router>
+      <Routes>
+        <Route path="/" element={<Drinks />} />
+       
+      </Routes>
+    </Router> */}
