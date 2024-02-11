@@ -23,6 +23,7 @@ function Drinks() {
     try {
       const drinks_data = await axios.get(`${drink_api}?per_page=10`);
       setDrinks(drinks_data.data);
+      console.log(drinks_data.data)
     } catch (err) {
       console.log(err);
       setError(true);
@@ -64,7 +65,7 @@ function Drinks() {
                       {drink.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      {drink.description.slice(0, 100)}...
+                      {drink.description.slice(0, 10)}...
                     </Typography>
                     
                   </CardContent>
